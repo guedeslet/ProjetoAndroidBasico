@@ -1,0 +1,16 @@
+<resources>
+    <string name="register">Cadastro</string>
+    <string name="projeto">Projeto Android Básico</string>
+    <string name="login">Login</string>
+    <string name="welcome">The future is in your hands.</string>
+    <string name="editText_name">Digite seu nome</string>
+    <string name="editText_cpf">Digite seu CPF</string>
+    <string name="button_cancel">Cancelar</string>
+    <string name="button_foward">Continuar</string>
+    <string name="editText_login">Login</string>
+    <string name="editText_password">Senha</string>
+    <string name="textView_login">O seu login é: </string>
+    <string name="textView_password">A sua senha é:</string>
+    <string name="textView_register">O seu nome é:</string>
+    <string name="textView_cpf">O seu CPF é:</string>
+</resources>
