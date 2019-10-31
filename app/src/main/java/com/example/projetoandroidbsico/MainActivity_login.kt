@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import kotlinx.android.synthetic.main.activity_login.*
 
 class MainActivityLogin : AppCompatActivity() {
 
@@ -12,9 +13,9 @@ class MainActivityLogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+
         val editTextLogin = findViewById<EditText>(R.id.editText_login)
         val editTextPassword = findViewById<EditText>(R.id.editText_password)
-
 
         val buttonContinue = findViewById<Button>(R.id.button_continue)
         buttonContinue.setOnClickListener {
@@ -29,6 +30,8 @@ class MainActivityLogin : AppCompatActivity() {
         buttonCancel.setOnClickListener{
             val intent = Intent(baseContext, MainActivity::class.java)
             startActivity(intent)
+
+            finish()
         }
     }
 }
