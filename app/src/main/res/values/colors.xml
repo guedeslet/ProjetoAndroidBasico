@@ -6,4 +6,5 @@
     <color name="transparence">#80000000</color>
     <color name="white">#FFFFFF</color>
     <color name="charcoal">#3B414B</color>
+    <color name="dark_grey">#6C6F74</color>
 </resources>
