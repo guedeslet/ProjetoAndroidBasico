@@ -13,4 +13,6 @@
     <string name="textView_password">A sua senha é:</string>
     <string name="textView_register">O seu nome é:</string>
     <string name="textView_cpf">O seu CPF é:</string>
+    <string name="textView_title">Título do livro</string>
+    <string name="textView_subtitle">Nome do autor do livro</string>
 </resources>

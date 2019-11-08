@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/editText_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="Título do livro"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/charcoal" />
+
+    <EditText
+        android:id="@+id/editText_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="Nome do autor do livro"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/charcoal" />
+
+    <Button
+        android:id="@+id/button_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/white"
+        android:text="Adicionar"
+        android:textColor="@color/charcoal"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+
+
+</LinearLayout>
+

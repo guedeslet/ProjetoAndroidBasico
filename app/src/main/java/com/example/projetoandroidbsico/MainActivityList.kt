@@ -3,32 +3,41 @@ package com.example.projetoandroidbsico
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.projetoandroidbsico.Adapter.Adapter
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_main_list.*
 
-class MainActivityList : AppCompatActivity()
-{
-    var mListBooks = ListItem(ArrayList())
+class MainActivityList : AppCompatActivity() {
+
+    private lateinit var recyclerView: RecyclerView
+
+    private lateinit var adapter: MyAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_list)
 
-        val adapter = Adapter(this, mListBooks)
 
-        var layoutManager = LinearLayoutManager(this)
-        var recycleView = recycleView_Layout
-        recycleView.layoutManager = layoutManager
-        recycleView.adapter = adapter
+        recyclerView = findViewById<RecyclerView>(R.id.recycleView_Layout)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        adapter = MyAdapter(mutableListOf<User>())
+        recyclerView.adapter = adapter
 
 
-        button_fab.setOnClickListener{
-            
+        button_fab.setOnClickListener {
+
+            val user = User("Título do livro")
+            adapter.addUser(user)
+
         }
 
+
+        }
 
 
     }
 
 
-}
+
+
+
