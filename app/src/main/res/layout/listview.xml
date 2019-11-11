@@ -30,14 +30,15 @@
 
         <TextView
             android:id="@+id/textView_Subtitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="@string/textView_subtitle"
+            android:textColor="@color/dark_grey"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ImageButton_Edit"
             app:layout_constraintStart_toStartOf="@id/textView_Title"
-            app:layout_constraintTop_toBottomOf="@id/textView_Title"
-            android:textColor="@color/dark_grey"/>
+            app:layout_constraintTop_toBottomOf="@id/textView_Title" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/ImageButton_Edit"

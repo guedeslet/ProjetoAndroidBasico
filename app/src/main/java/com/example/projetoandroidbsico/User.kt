@@ -1,4 +1,4 @@
 package com.example.projetoandroidbsico
 
-class User (val name : String) {
+class User (var name : String, var lastName : String) {
 }
