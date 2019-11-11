@@ -1,75 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/charcoal">
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/img_bg" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    android:background="@drawable/img_bg"
+    android:orientation="vertical">
 
     <EditText
         android:id="@+id/editText_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/editText_name"
         android:layout_marginTop="150dp"
+        android:hint="@string/editText_name"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:textColor="@color/white"
         android:inputType="text"
-        />
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText_cpf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/editText_cpf"
-        android:layout_marginBottom="200dp"
-        android:layout_marginTop="32dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginTop="32dp"
+        android:hint="@string/editText_cpf"
         android:inputType="number"
         android:textColor="@color/white"
-        />
+        app:layout_constraintTop_toBottomOf="@id/editText_register" />
+
+    <EditText
+        android:id="@+id/editText_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="32dp"
+        android:text=""
+        android:hint="@string/editText_age"
+        android:inputType="number"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/editText_cpf" />
+
+    <EditText
+        android:id="@+id/editText_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="32dp"
+        android:hint="@string/editText_year"
+        android:inputType="number"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/editText_age" />
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp">
+    <Button
+        android:id="@+id/button_cancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_continue"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_continue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_foward"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/button_cancel" />
 
 
-            <Button
-                android:id="@+id/button_cancel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/button_cancel"
-                android:layout_weight="1"
-                />
-
-            <Button
-                android:id="@+id/button_continue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/button_foward"
-                android:layout_weight="1"/>
-
-
-
-        </LinearLayout>
-    </LinearLayout>
-
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,10 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.activity_register.button_cancel
+import kotlinx.android.synthetic.main.activity_register.button_continue
 
 class MainActivityRegister : AppCompatActivity() {
 
@@ -13,22 +17,18 @@ class MainActivityRegister : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        val editTextUsername = findViewById<EditText>(R.id.editText_register)
-        val editTextCpf = findViewById<EditText>(R.id.editText_cpf)
 
 
-        val buttonContinue = findViewById<Button>(R.id.button_continue)
-        buttonContinue.setOnClickListener {
-            val intent = Intent(baseContext, MainActivityViewRegister::class.java)
-            intent.putExtra("username", editTextUsername.text.toString())
-            intent.putExtra("cpf", editTextCpf.text.toString())
+        button_continue.setOnClickListener {
+            val intent = Intent(baseContext, MainActivityList::class.java)
+            intent.putExtra("username", editText_register.text.toString())
+
+
             startActivity(intent)
         }
 
 
-        val buttonCancel = findViewById<Button>(R.id.button_cancel)
-
-        buttonCancel.setOnClickListener {
+        button_cancel.setOnClickListener {
             val intent = Intent(baseContext, MainActivity::class.java)
             startActivity(intent)
 

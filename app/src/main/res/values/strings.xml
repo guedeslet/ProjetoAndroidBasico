@@ -15,4 +15,6 @@
     <string name="textView_cpf">O seu CPF é:</string>
     <string name="textView_title">Título do livro</string>
     <string name="textView_subtitle">Nome do autor do livro</string>
+    <string name="editText_age">Digite sua idade</string>
+    <string name="editText_year">Digite o ano em que nasceu</string>
 </resources>

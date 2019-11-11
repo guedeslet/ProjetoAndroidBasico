@@ -25,6 +25,10 @@ class MainActivityList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_list)
+""
+
+        val username = intent.getStringExtra("username")
+        actionBar.title = ("Bem vindo, ${username}")
 
 
         recyclerView = findViewById<RecyclerView>(R.id.recycleView_Layout)
