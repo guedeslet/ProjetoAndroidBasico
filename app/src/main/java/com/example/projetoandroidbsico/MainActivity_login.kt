@@ -16,21 +16,25 @@ class MainActivityLogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-
-
         button_continue.setOnClickListener {
-            val intent = Intent(baseContext, MainActivityList::class.java)
+            if (editText_login.text.isEmpty()) {
+                editText_login.error = " Insira seu Login"
 
-            intent.putExtra("username",editText_login.text.toString() )
+            }
+            if (editText_password.text.isEmpty()) {
+                editText_password.error = " Insira sua senha"
+            }
+            if (editText_login.text.isNotEmpty() && editText_password.text.isNotEmpty()) {
+                val intent = Intent(baseContext, MainActivityList::class.java)
+                intent.putExtra("username", editText_login.text.toString())
+                startActivity(intent)
+            }
 
-            startActivity(intent)
         }
 
-
-        button_cancel.setOnClickListener{
+        button_cancel.setOnClickListener {
             val intent = Intent(baseContext, MainActivity::class.java)
             startActivity(intent)
-
             finish()
         }
     }

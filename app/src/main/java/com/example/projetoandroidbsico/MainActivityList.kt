@@ -25,10 +25,10 @@ class MainActivityList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_list)
-""
+
 
         val username = intent.getStringExtra("username")
-        actionBar.title = ("Bem vindo, ${username}")
+        supportActionBar?.title = ("Bem vinda(o), ${username}")
 
 
         recyclerView = findViewById<RecyclerView>(R.id.recycleView_Layout)
@@ -41,6 +41,8 @@ class MainActivityList : AppCompatActivity() {
 
             alert {
                 title = "Inserir Livro"
+
+
 
                 customView {
                     linearLayout {
@@ -66,12 +68,26 @@ class MainActivityList : AppCompatActivity() {
                 }
 
                 positiveButton("Cadastrar") {
-                    adapter.addUser(
-                        User(
-                            editText_title.text.toString(),
-                            editText_subtitle.text.toString()
+
+
+                    if (editText_title.text.isEmpty()) {
+                        editText_title.error = "Insira o título do livro"
+                    }
+                    if (editText_subtitle.text.isEmpty()) {
+                        editText_subtitle.error = "Insira o nome do autor do livro"
+                    }
+                    if (editText_title.text.isNotEmpty() && editText_subtitle.text.isNotEmpty()) {
+
+                        adapter.addUser(
+                            User(
+                                editText_title.text.toString(),
+                                editText_subtitle.text.toString()
+                            )
                         )
-                    )
+
+
+                    }
+
                 }
 
             }.show()
