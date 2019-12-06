@@ -8,7 +8,7 @@ import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import org.jetbrains.anko.*
 
-class MyAdapter(private var users: ArrayList<User>, private val context: Context) :
+class MyAdapter(private var users: MutableList<User>, private val context: Context) :
     RecyclerView.Adapter<MyViewHolder>() {
     lateinit var editText_title: EditText
     lateinit var editText_subtitle: EditText

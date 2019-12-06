@@ -1,17 +1,20 @@
 package com.example.projetoandroidbsico
 
-import android.graphics.Color
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.EditText
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.example.projetoandroidbsico.Repository.booksRepository
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main_list.*
 import org.jetbrains.anko.*
 
-class MainActivityList : AppCompatActivity() {
+class ActivityList : AppCompatActivity() {
+    private lateinit var mBooksRepository: booksRepository
 
     var books = ArrayList<User>()
     lateinit var editText_title: EditText
@@ -27,14 +30,19 @@ class MainActivityList : AppCompatActivity() {
         setContentView(R.layout.activity_main_list)
 
 
-        val username = intent.getStringExtra("username")
-        supportActionBar?.title = ("Bem vinda(o), ${username}")
 
 
-        recyclerView = findViewById<RecyclerView>(R.id.recycleView_Layout)
+
+        supportActionBar?.title = ("Bem vinda(o)")
+        mBooksRepository = booksRepository.getInstance(this)
+
+
+
+        recyclerView = recycleView_Layout
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = MyAdapter(books, this)
+        adapter = MyAdapter(mBooksRepository.catchBook(), this)
         recyclerView.adapter = adapter
+
 
 
         button_fab.setOnClickListener {
@@ -78,28 +86,62 @@ class MainActivityList : AppCompatActivity() {
                     }
                     if (editText_title.text.isNotEmpty() && editText_subtitle.text.isNotEmpty()) {
 
-                        adapter.addUser(
-                            User(
-                                editText_title.text.toString(),
-                                editText_subtitle.text.toString()
-                            )
+                        val mbooksRepository = booksRepository.getInstance(this@ActivityList)
+
+                        mbooksRepository.insertBook(
+                            editText_title.text.toString(),
+                            editText_subtitle.text.toString()
+
                         )
 
 
+
+                        updateList(mBooksRepository.catchBook())
+
                     }
+
 
                 }
 
+
             }.show()
 
+
         }
+        navigation.setOnNavigationItemSelectedListener(object  : BottomNavigationView.OnNavigationItemSelectedListener{
+            override fun onNavigationItemSelected(p0: MenuItem): Boolean {
+                when (p0.itemId){
+                    R.id.map ->{
+                       val  intent = Intent(baseContext, ActivityMap::class.java)
+                        startActivity(intent)
+
+                    }
+
+                    R.id.news ->{
+                        val intent = Intent(baseContext, ActivityNews::class.java)
+                        startActivity(intent)
+
+                    }
+                }
+                return true
+
+
+            }
+
+        })
 
 
     }
 
+    fun updateList(list: MutableList<User>) {
 
+        adapter = MyAdapter(list, this)
+        recyclerView.adapter = adapter
+        adapter.notifyDataSetChanged()
+
+
+    }
 }
-
 
 
 

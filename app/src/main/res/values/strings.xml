@@ -7,7 +7,7 @@
     <string name="editText_cpf">Digite seu CPF</string>
     <string name="button_cancel">Cancelar</string>
     <string name="button_foward">Continuar</string>
-    <string name="editText_login">Login</string>
+    <string name="editText_loginEmail">Email</string>
     <string name="editText_password">Senha</string>
     <string name="textView_login">O seu login é: </string>
     <string name="textView_password">A sua senha é:</string>
@@ -15,6 +15,8 @@
     <string name="textView_cpf">O seu CPF é:</string>
     <string name="textView_title">Título do livro</string>
     <string name="textView_subtitle">Nome do autor do livro</string>
-    <string name="editText_age">Digite sua idade</string>
+    <string name="editText_email">Digite seu Email</string>
     <string name="editText_year">Digite o ano em que nasceu</string>
+    <string name="textView_titleNews"> Título da notícia</string>
+    <string name="textView_description"> Descrição da notícia</string>
 </resources>
