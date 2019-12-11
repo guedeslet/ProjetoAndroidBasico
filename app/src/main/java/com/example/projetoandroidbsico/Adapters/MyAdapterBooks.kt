@@ -7,7 +7,7 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projetoandroidbsico.R
-import com.example.projetoandroidbsico.User
+import com.example.projetoandroidbsico.Models.User
 import com.example.projetoandroidbsico.ViewHolders.MyViewHolderBooks
 import org.jetbrains.anko.*
 

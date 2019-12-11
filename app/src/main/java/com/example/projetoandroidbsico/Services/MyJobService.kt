@@ -1,4 +1,4 @@
-package com.example.projetoandroidbsico
+package com.example.projetoandroidbsico.Services
 
 import android.app.job.JobParameters
 import android.app.job.JobService
@@ -19,8 +19,10 @@ public class MyJobService: JobService(){
     }
 
     override fun onStartJob(p0: JobParameters?): Boolean {
-        Log.d(TAG, "Job Started!")
+        Log.d("aspk", "Job Started!")
         isWorking = true
+
+
 
         // We need 'jobParameters' so we can call ''obFinished'
 
@@ -43,12 +45,12 @@ public class MyJobService: JobService(){
 
         for (x in 0..1000){
 
-            Log.d(TAG, "Job finished!")
+            Log.d("aspk", "Job finished!")
             try{
                 Thread.sleep(10)
             }catch (e: Exception){}
         }
-        Log.d(TAG, "Job finished!")
+        Log.d("aspk", "Job finished!")
         isWorking = false
         val needsReschedule = false
         jobFinished(p0, needsReschedule)

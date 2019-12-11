@@ -1,18 +1,26 @@
-package com.example.projetoandroidbsico
+package com.example.projetoandroidbsico.Views
 
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.EditText
 import android.widget.LinearLayout
+import androidx.core.app.NotificationCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projetoandroidbsico.Adapters.MyAdapterBooks
+import com.example.projetoandroidbsico.R
 import com.example.projetoandroidbsico.Repository.booksRepository
+import com.example.projetoandroidbsico.Models.User
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main_list.*
 import org.jetbrains.anko.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 class ActivityList : AppCompatActivity() {
     private lateinit var mBooksRepository: booksRepository
@@ -29,9 +37,6 @@ class ActivityList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_list)
-
-
-
 
 
         supportActionBar?.title = ("Bem vinda(o)")

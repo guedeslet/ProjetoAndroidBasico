@@ -1,9 +1,13 @@
-package com.example.projetoandroidbsico
+package com.example.projetoandroidbsico.Views
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.projetoandroidbsico.R
 import com.example.projetoandroidbsico.Repository.userRepository
+import com.example.projetoandroidbsico.Validations.Validator
+import com.example.projetoandroidbsico.Validations.showMessageError
+import com.example.projetoandroidbsico.Validations.validateEmail
 import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.android.synthetic.main.activity_register.button_cancel
 import kotlinx.android.synthetic.main.activity_register.button_continue
@@ -33,15 +37,23 @@ class ActivityRegister : AppCompatActivity() {
                 editText_cpf.error = "Campo de CPF obrigatório"
             }
 
-            if (!Validator.validatorPassword(editText_passwordRegister.text.toString())) {
+            if (!Validator.validatorPassword(
+                    editText_passwordRegister.text.toString()
+                )
+            ) {
                 editText_passwordRegister.error = "Campo de senha obrigatório"
             }
 
-            if (!Validator.validatorRegister(editText_register.text.toString())) {
+            if (!Validator.validatorRegister(
+                    editText_register.text.toString()
+                )
+            ) {
                 editText_register.error = "Campo obrigatório"
             }
 
-            if (Validator.validatorRegister(editText_register.text.toString()) && Validator.validatorPassword(
+            if (Validator.validatorRegister(
+                    editText_register.text.toString()
+                ) && Validator.validatorPassword(
                     editText_passwordRegister.text.toString()
                 )
                 && Validator.validatorCpf(editText_cpf.text.toString()) && Validator.validatorEmail(

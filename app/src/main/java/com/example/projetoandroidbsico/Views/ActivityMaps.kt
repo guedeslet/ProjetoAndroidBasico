@@ -1,4 +1,4 @@
-package com.example.projetoandroidbsico
+package com.example.projetoandroidbsico.Views
 
 import android.Manifest
 import android.content.Context
@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.projetoandroidbsico.Connection.RetrofitRepositories
 import com.example.projetoandroidbsico.Models.Academia
 import com.example.projetoandroidbsico.Models.Results
-import com.google.android.gms.maps.CameraUpdateFactory
+import com.example.projetoandroidbsico.R
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
@@ -123,7 +123,7 @@ class ActivityMaps : AppCompatActivity(), OnMapReadyCallback {
                             mMap.addMarker(MarkerOptions().position(latlng).title("Esta é minha localização"))
 
                         marker.position = latlng
-                        mMap.moveCamera(CameraUpdateFactory.newLatLng(latlng))
+
                     }
 
                     override fun onStatusChanged(

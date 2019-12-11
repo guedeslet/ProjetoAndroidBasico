@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -21,49 +23,49 @@
             android:value="@string/google_maps_key" />
 
 
-        <activity android:name=".ActivityMaps"
-            android:parentActivityName=".ActivityList">
+        <activity android:name=".Views.ActivityMaps"
+            android:parentActivityName=".Views.ActivityList">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ActivityList" />
+                android:value=".Views.ActivityList" />
         </activity>
 
 
         <activity
-            android:name=".ActivityNews"
-            android:parentActivityName=".ActivityList">
+            android:name=".Views.ActivityNews"
+            android:parentActivityName=".Views.ActivityList">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ActivityList" />
+                android:value=".Views.ActivityList" />
         </activity>
 
 
-        <activity android:name=".ActivityList">
+        <activity android:name=".Views.ActivityList">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ActivityRegister" />
-        </activity>
-
-
-        <activity
-            android:name=".ActivityRegister"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Views.ActivityRegister" />
         </activity>
 
 
         <activity
-            android:name=".ActivityLogin"
-            android:parentActivityName=".MainActivity">
+            android:name=".Views.ActivityRegister"
+            android:parentActivityName=".Views.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Views.MainActivity" />
         </activity>
 
 
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".Views.ActivityLogin"
+            android:parentActivityName=".Views.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Views.MainActivity" />
+        </activity>
+
+
+        <activity android:name=".Views.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -73,8 +75,10 @@
 
 
         <service
-            android:name=".MyJobService"
+            android:name=".Services.MyJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver android:name=".Notifications.DailyNotifications"/>
 
     </application>
 

@@ -3,7 +3,7 @@ package com.example.projetoandroidbsico.Repository
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
-import com.example.projetoandroidbsico.User
+import com.example.projetoandroidbsico.Models.User
 import java.lang.Exception
 
 

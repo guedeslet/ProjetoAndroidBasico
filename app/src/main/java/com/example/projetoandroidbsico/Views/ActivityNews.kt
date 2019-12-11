@@ -1,15 +1,14 @@
-package com.example.projetoandroidbsico
+package com.example.projetoandroidbsico.Views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projetoandroidbsico.Adapters.MyadapterBitcoins
 import com.example.projetoandroidbsico.Connection.RetrofitRepositories
 import com.example.projetoandroidbsico.Models.BitcoinsNews
+import com.example.projetoandroidbsico.R
 import kotlinx.android.synthetic.main.activity_news.*
-import org.jetbrains.anko.longToast
 import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback

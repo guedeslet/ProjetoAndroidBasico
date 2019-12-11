@@ -1,9 +1,11 @@
-package com.example.projetoandroidbsico
+package com.example.projetoandroidbsico.Views
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.projetoandroidbsico.R
 import com.example.projetoandroidbsico.Repository.userRepository
+import com.example.projetoandroidbsico.Validations.Validator
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.button_cancel
 import kotlinx.android.synthetic.main.activity_login.button_continue
@@ -23,16 +25,26 @@ class ActivityLogin : AppCompatActivity() {
 
 
 
-            if (!Validator.validatorEmail(editText_loginEmail.text.toString())) {
+            if (!Validator.validatorEmail(
+                    editText_loginEmail.text.toString()
+                )
+            ) {
                 editText_loginEmail.error = "Campo de email obrigatório"
             }
 
-            if (!Validator.validatorPassword(editText_password.text.toString())) {
+            if (!Validator.validatorPassword(
+                    editText_password.text.toString()
+                )
+            ) {
                 editText_password.error = "Campo de senha obrigatório"
             }
 
-            if(Validator.validatorPassword(editText_password.text.toString()) && Validator.validatorEmail(
-                        editText_loginEmail.text.toString())){
+            if(Validator.validatorPassword(
+                    editText_password.text.toString()
+                ) && Validator.validatorEmail(
+                    editText_loginEmail.text.toString()
+                )
+            ){
                 val mUserRepository =  userRepository.getInstance(this)
 
 
