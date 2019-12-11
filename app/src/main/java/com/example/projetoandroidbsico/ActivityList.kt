@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projetoandroidbsico.Adapters.MyAdapterBooks
 import com.example.projetoandroidbsico.Repository.booksRepository
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main_list.*
@@ -23,7 +24,7 @@ class ActivityList : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
 
-    private lateinit var adapter: MyAdapter
+    private lateinit var adapter: MyAdapterBooks
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +41,10 @@ class ActivityList : AppCompatActivity() {
 
         recyclerView = recycleView_Layout
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = MyAdapter(mBooksRepository.catchBook(), this)
+        adapter = MyAdapterBooks(
+            mBooksRepository.catchBook(),
+            this
+        )
         recyclerView.adapter = adapter
 
 
@@ -112,7 +116,7 @@ class ActivityList : AppCompatActivity() {
             override fun onNavigationItemSelected(p0: MenuItem): Boolean {
                 when (p0.itemId){
                     R.id.map ->{
-                       val  intent = Intent(baseContext, ActivityMap::class.java)
+                       val  intent = Intent(baseContext, MapActivity::class.java)
                         startActivity(intent)
 
                     }
@@ -135,7 +139,7 @@ class ActivityList : AppCompatActivity() {
 
     fun updateList(list: MutableList<User>) {
 
-        adapter = MyAdapter(list, this)
+        adapter = MyAdapterBooks(list, this)
         recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
 

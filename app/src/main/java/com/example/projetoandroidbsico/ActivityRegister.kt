@@ -34,7 +34,7 @@ class ActivityRegister : AppCompatActivity() {
             }
 
             if (!Validator.validatorPassword(editText_passwordRegister.text.toString())) {
-                editText_passwordRegister.error = "Campo de senha orbigatório"
+                editText_passwordRegister.error = "Campo de senha obrigatório"
             }
 
             if (!Validator.validatorRegister(editText_register.text.toString())) {

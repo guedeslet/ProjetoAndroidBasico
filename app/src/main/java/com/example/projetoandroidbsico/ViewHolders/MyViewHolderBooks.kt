@@ -1,11 +1,12 @@
-package com.example.projetoandroidbsico
+package com.example.projetoandroidbsico.ViewHolders
 
 import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projetoandroidbsico.R
 
-class MyViewHolder(itemView:View) : RecyclerView.ViewHolder(itemView) {
+class MyViewHolderBooks(itemView:View) : RecyclerView.ViewHolder(itemView) {
 
     var title : TextView = itemView.findViewById(R.id.textView_Title)
     var subtitle : TextView = itemView.findViewById(R.id.textView_Subtitle)

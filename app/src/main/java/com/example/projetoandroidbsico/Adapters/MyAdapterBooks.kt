@@ -1,4 +1,4 @@
-package com.example.projetoandroidbsico
+package com.example.projetoandroidbsico.Adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,16 +6,19 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projetoandroidbsico.R
+import com.example.projetoandroidbsico.User
+import com.example.projetoandroidbsico.ViewHolders.MyViewHolderBooks
 import org.jetbrains.anko.*
 
-class MyAdapter(private var users: MutableList<User>, private val context: Context) :
-    RecyclerView.Adapter<MyViewHolder>() {
+class MyAdapterBooks(private var users: MutableList<User>, private val context: Context) :
+    RecyclerView.Adapter<MyViewHolderBooks>() {
     lateinit var editText_title: EditText
     lateinit var editText_subtitle: EditText
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        return MyViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolderBooks {
+        return MyViewHolderBooks(
             LayoutInflater.from(parent.context).inflate(
                 R.layout.listview,
                 parent,
@@ -31,7 +34,7 @@ class MyAdapter(private var users: MutableList<User>, private val context: Conte
     }
 
     // Ele faz a cola entre o que está no adapter e cada item dentro do viewHolder
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolderBooks, position: Int) {
         holder.title.text = users[position].name
         holder.subtitle.text = users[position].lastName
         holder.delete.setOnClickListener {

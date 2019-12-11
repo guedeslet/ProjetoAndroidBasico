@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.projetoandroidbsico">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -10,28 +13,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+
+        <activity android:name=".MapActivity"
+            android:parentActivityName=".ActivityList">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActivityList" />
+        </activity>
+
+
         <activity
             android:name=".ActivityNews"
             android:parentActivityName=".ActivityList">
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ActivityList" />
         </activity>
-        <activity
-            android:name=".ActivityMap"
-            android:parentActivityName=".ActivityList">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ActivityList" />
 
 
-        </activity>
         <activity android:name=".ActivityList">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ActivityRegister" />
         </activity>
+
+
         <activity
             android:name=".ActivityRegister"
             android:parentActivityName=".MainActivity">
@@ -39,6 +51,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
+
         <activity
             android:name=".ActivityLogin"
             android:parentActivityName=".MainActivity">
@@ -46,6 +60,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,9 +70,11 @@
             </intent-filter>
         </activity>
 
+
         <service
             android:name=".MyJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+
     </application>
 
 </manifest>

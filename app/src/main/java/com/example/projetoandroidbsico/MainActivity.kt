@@ -10,11 +10,12 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projetoandroidbsico.Adapters.MyAdapterBooks
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter : MyAdapter
+    private lateinit var adapter : MyAdapterBooks
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
