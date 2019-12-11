@@ -116,7 +116,7 @@ class ActivityList : AppCompatActivity() {
             override fun onNavigationItemSelected(p0: MenuItem): Boolean {
                 when (p0.itemId){
                     R.id.map ->{
-                       val  intent = Intent(baseContext, MapActivity::class.java)
+                       val  intent = Intent(baseContext, ActivityMaps::class.java)
                         startActivity(intent)
 
                     }

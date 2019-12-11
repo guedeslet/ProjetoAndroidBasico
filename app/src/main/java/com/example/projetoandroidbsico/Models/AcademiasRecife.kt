@@ -1,3 +1,3 @@
 package com.example.projetoandroidbsico.Models
 
-class AcademiasRecife (val recordes: ArrayList<Academia>)
+class AcademiasRecife (val records: ArrayList<Academia>)

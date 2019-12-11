@@ -31,15 +31,11 @@ class ActivityNews : AppCompatActivity() {
         requestNews.getNews().enqueue(object:Callback<BitcoinsNews>{
             override fun onFailure(call: Call<BitcoinsNews>, t: Throwable) {
                 toast("Erro: ${t.message}")
-
-
-
             }
 
             override fun onResponse(call: Call<BitcoinsNews>, response: Response<BitcoinsNews>) {
                 response.body()?.let { confAdapter(it) }
-                longToast("Status: ${response.code()} ${response.raw().request().url()}")
-                Log.i("aspk", "${response.raw().request().url()}")
+
             }
 
         })

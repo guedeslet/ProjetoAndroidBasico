@@ -12,6 +12,7 @@
         android:label="@string/projeto"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
 
 
@@ -20,7 +21,7 @@
             android:value="@string/google_maps_key" />
 
 
-        <activity android:name=".MapActivity"
+        <activity android:name=".ActivityMaps"
             android:parentActivityName=".ActivityList">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
